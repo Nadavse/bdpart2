@@ -25,7 +25,7 @@ $(document).ready(function(){
           };
         
         // Change texts by gender
-        if (currentName === "") {
+        if (firstOrSeconed != 1 && firstOrSeconed != 2) {
         
             $("#title-part-2").text("האישיות העיצובית של " + currentName);
             $("#successPartTwoTitle").text(" נהדר, סיימת את החלק שלך בהצלחה!" + currentName);
