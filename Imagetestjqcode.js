@@ -4,13 +4,20 @@ $(document).ready(function(){
             var url_string = window.location.href;
             var url = new URL(url_string);
         var numberOfAdults = url.searchParams.get("numberOfAdults");
-            var firstName = url.searchParams.get("firstName");
+        var firstName = url.searchParams.get("firstName");
         var firstGender = url.searchParams.get("firstGender");
         var seconedName = url.searchParams.get("seconedName");
         var seconedGender = url.searchParams.get("seconedGender");
         var idSubmission = url.searchParams.get("idSubmission");
         var firstOrSeconed = url.searchParams.get("firstOrSeconed");
         
+        alert("numberOfAdults = " + numberOfAdults)
+        alert("firstName = " + firstName)
+        alert("firstGender = " + firstGender)
+        alert("seconedName = " + seconedName)
+        alert("seconedGender = " + seconedGender)
+        alert("idSubmission = " + idSubmission)
+        alert("firstOrSeconed = " + firstOrSeconed)
         
         // find the current gender and name
         var currentGender = "";
@@ -25,10 +32,10 @@ $(document).ready(function(){
           };
         
         // Change texts by gender
-        if (currentGender == "male") {
+        if (currentGender == "male" || currentGender == "female") {
         
-            $("#title-part-2").text("האישיות העיצובית של " + currentName);
-            $("#successPartTwoTitle").text(" נהדר, סיימת את החלק שלך בהצלחה!" + currentName);
+          $("#title-part-2").text("האישיות העיצובית של " + currentName);
+          $("#successPartTwoTitle").text(" נהדר, סיימת את החלק שלך בהצלחה!" + currentName);
           $("#optionContinue").text("להמשך השאלון של " + seconedName + " במכשיר זה");
           $("#optionSend").text("לשליחת המשך השאלון ל" + seconedName + " במייל");
           if (seconedGender == "male") {
