@@ -25,7 +25,7 @@ $(document).ready(function(){
           };
         
         // Change texts by gender
-        if (currentName != "null") {
+        if (currentName) {
         
             $("#title-part-2").text("האישיות העיצובית של " + currentName);
             $("#successPartTwoTitle").text(" נהדר, סיימת את החלק שלך בהצלחה!" + currentName);
@@ -213,17 +213,19 @@ $(document).ready(function(){
       
       //change continue buttons urls
           $('#wf-form-seconed-part').submit(function() {
-                  $(document).ajaxSuccess(function(){
-                         $("#bContinue").attr("href", '/part2'
-              + '?numberOfAdults=' + $('input[name=Number-of-adults]:checked', '#wf-form-First-part').val()
-              + '&firstName=' + $('#1st-name').val()
+            $(document).ajaxSuccess(function(){
+              var nextLink = '/part2'
+              + '?numberOfAdults=' + numberOfAdults
+              + '&firstName=' + firstName
               + '&firstOrSeconed=2'
-              + '&firstGender=' + $('#1st-gender').val()
-              + '&seconedName=' + $('#2nd-name').val()
-              + '&seconedGender=' + $('#2nd-gender').val()
-              + '&idSubmission=' + $('#id-submission').val()
-              );
-                });	    
-            });
+              + '&firstGender=' + firstGender
+              + '&seconedName=' + seconedName
+              + '&seconedGender=' + seconedGender
+              + '&idSubmission=' + idSubmission;
+
+              $("#bContinue").attr("href", nextLink);
+              $("#bSend").attr("href", "mailto:?to=&body=היי " + seconedName + " לחץ על הלינק בכדי למלא את החלק שלך בשאלון - " + nextLink + ",&subject=לינק לשאלון האישיות העיצובית של " + seconedName);
+            });	    
+        });
       
     });
