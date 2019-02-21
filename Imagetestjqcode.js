@@ -235,17 +235,18 @@ $(document).ready(function(){
                 $("#errorImages").show();  
               
             };
+        
+        return;
+        
+        };
 
         //check radio buttons
         if ($('input[name="shamran"]:checked').length == 0) {
 
             $("select[name='shamran']").focus();
+            return;
 
         }
-        
-        return;
-        
-        };
 
         $("#part2SubmitButton2").hide();
         $("#part2SubmitButtonLoading").show();
