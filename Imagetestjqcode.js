@@ -38,7 +38,7 @@ $(document).ready(function(){
         if (currentName !== null) {
         
           $("#title-part-2").text("האישיות העיצובית של " + currentName);
-          $("#successPartTwoTitle").text(" נהדר, סיימת את החלק שלך בהצלחה!" + currentName);
+          //$("#successPartTwoTitle").text(" נהדר, סיימת את החלק שלך בהצלחה!" + currentName);
 
         };
 
@@ -47,9 +47,9 @@ $(document).ready(function(){
             $("#optionContinue").text("להמשך השאלון של " + seconedName + " במכשיר זה");
             $("#optionSend").text("לשליחת המשך השאלון ל" + seconedName + " במייל");
             if (seconedGender == "male") {
-                $("#successPartTwotext").text("עכשיו נבקש מ" + seconedName + "למלא את החלק שלו.");
+                $("#successPartTwotext").text("עכשיו נבקש מ " + seconedName + " למלא את החלק שלו.");
             } else if (seconedGender == "female") {
-                $("#successPartTwotext").text("עכשיו נבקש מ" + seconedName + "למלא את החלק שלה.");
+                $("#successPartTwotext").text("עכשיו נבקש מ " + seconedName + " למלא את החלק שלה.");
             };
             
           };
@@ -223,14 +223,14 @@ $(document).ready(function(){
                   $(".popuptest").stop();
                   if (currentGender == "male") {
 
-                    $(".popuptest").find("div.popuptesttext").text("בחרת חמש תמונות! אם תרצה לשנות את אחת מבחירותיך, לחץ על התמונה בכדי לבטל");       
+                    $(".popuptest").find("div.popuptesttext").text("בחרת חמש תמונות! אם תרצה לשנות את אחת מבחירותיך, לחץ עליה בכדי לבטל");       
     
                   } else if (currentGender == "female") {
                   
-                    $(".popuptest").find("div.popuptesttext").text("בחרת חמש תמונות! אם תרצי לשנות את אחת מבחירותייך, לחצי על התמונה בכדי לבטל");  
+                    $(".popuptest").find("div.popuptesttext").text("בחרת חמש תמונות! אם תרצי לשנות את אחת מבחירותייך, לחצי עליה בכדי לבטל");  
                   
                   } else {
-                    $(".popuptest").find("div.popuptesttext").text("בחרתם חמש תמונות! אם תרצו לשנות את אחת מבחירותיכם, לחצו על התמונה בכדי לבטל");   
+                    $(".popuptest").find("div.popuptesttext").text("בחרתם חמש תמונות! אם תרצו לשנות את אחת מבחירותיכם, לחצו עליה בכדי לבטל");   
                   };
                   $(".popuptest").fadeIn(300).delay(6000).fadeOut(300);
                   popupcount++;
@@ -245,14 +245,14 @@ $(document).ready(function(){
                   $(".popuptest").stop();
                   if (currentGender == "male") {
 
-                    $(".popuptest").find("div.popuptesttext").text("לא ניתן לבחור יותר מחמש תמונות. אם תרצה לשנות את אחת מבחירותיך, לחץ על התמונה בכדי לבטל");       
+                    $(".popuptest").find("div.popuptesttext").text("לא ניתן לבחור יותר מחמש תמונות. אם תרצה לשנות את אחת מבחירותיך, לחץ עליה בכדי לבטל");       
     
                   } else if (currentGender == "female") {
                   
-                    $(".popuptest").find("div.popuptesttext").text("לא ניתן לבחור יותר מחמש תמונות. אם תרצי לשנות את אחת מבחירותייך, לחצי על התמונה בכדי לבטל");
+                    $(".popuptest").find("div.popuptesttext").text("לא ניתן לבחור יותר מחמש תמונות. אם תרצי לשנות את אחת מבחירותייך, לחצי עליה בכדי לבטל");
                   
                   } else {
-                    $(".popuptest").find("div.popuptesttext").text("לא ניתן לבחור יותר מחמש תמונות. אם תרצו לשנות את אחת מבחירותיכם, לחצו על התמונה בכדי לבטל");
+                    $(".popuptest").find("div.popuptesttext").text("לא ניתן לבחור יותר מחמש תמונות. אם תרצו לשנות את אחת מבחירותיכם, לחצו עליה בכדי לבטל");
                   };
                   $(".popuptest").fadeIn(300).delay(6000).fadeOut(300);
                   popupcount++;
@@ -305,7 +305,7 @@ $(document).ready(function(){
       //change continue buttons urls
           $('#wf-form-seconed-part').submit(function() {
             $(document).ajaxSuccess(function(){
-              var nextLink = '/part2'
+              var nextLink = 'https://home-being.webflow.io/part2'
               + '?numberOfAdults=' + numberOfAdults
               + '&firstName=' + firstName
               + '&firstOrSeconed=2'
