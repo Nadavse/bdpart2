@@ -24,6 +24,11 @@ $(document).ready(function(){
           currentName = seconedName;
           };
 
+        // hide loading button and image error
+        $("#part2SubmitButtonLoading").hide();
+        $("#errorImages").hide();
+
+
         //add current name and id to the form
         $("#idTestPart2").val(idSubmission);
         $("#NamePart2").val(currentName);
@@ -196,6 +201,7 @@ $(document).ready(function(){
                   }
                   if (n == 4 && popupcount == 2) {
                   $(".popuptest").stop();
+                  $("#errorImages").hide();
                   $(".popuptest").find("div.popuptesttext").text("מצויין :) בחרת חמש תמונות! אם תרצי, את יכולה לשנות את הבחירות שלך בלחיצה נוספת על התמונות שבחרת");
                   $(".popuptest").fadeIn(300).delay(6000).fadeOut(300);
                   popupcount++;
@@ -212,9 +218,25 @@ $(document).ready(function(){
           }
       });
       // Submiting part 2
-      $("#part2SubmitButtonLoading").hide();
       $("#part2SubmitButton2").click(function(){
-        alert("The paragraph was clicked.");
+
+        //check number of images
+        if ( chosen.length <  2) {
+            if (currentGender == "male") {
+
+                $("#errorImages").text("* בחר בין 3 ל-5 תמונות בכדי להמשיך");
+                $("#errorImages").show();        
+
+            } else if (currentGender == "female") {
+              
+                $("#errorImages").text("* בחרי בין 3 ל-5 תמונות בכדי להמשיך");
+                $("#errorImages").show();  
+              
+            };
+        
+        return;
+        
+        };
 
         $("#part2SubmitButton2").hide();
         $("#part2SubmitButtonLoading").show();
