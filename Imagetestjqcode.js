@@ -201,16 +201,18 @@ $(document).ready(function(){
                   }
                   if (n == 4 && popupcount == 2) {
                   $(".popuptest").stop();
-                  $("#errorImages").hide();
                   $(".popuptest").find("div.popuptesttext").text("מצויין :) בחרת חמש תמונות! אם תרצי, את יכולה לשנות את הבחירות שלך בלחיצה נוספת על התמונות שבחרת");
                   $(".popuptest").fadeIn(300).delay(6000).fadeOut(300);
                   popupcount++;
                   }
                   n++;
+                  if (n > 3) {
+                    $("#errorImages").hide();
+                  }
                   $(this).find("div.imagetexttag").fadeToggle(300);
                   $(this).find("div.imagetextnumber").text(n);
               } else {
-                      $(".popuptest").stop();
+                  $(".popuptest").stop();
                   $(".popuptest").find("div.popuptesttext").text("אי אפשר לבחור יותר מחמש תמונות. אם תרצי, את יכולה לבטל את התמונות שכבר בחרת בלחיצה");
                   $(".popuptest").fadeIn(300).delay(6000).fadeOut(300);
                   popupcount++;
@@ -221,7 +223,7 @@ $(document).ready(function(){
       $("#part2SubmitButton2").click(function(){
 
         //check number of images
-        if ( chosen.length <  2) {
+        if ( n <  3) {
             if (currentGender == "male") {
 
                 $("#errorImages").text("* בחר בין 3 ל-5 תמונות בכדי להמשיך");
