@@ -206,7 +206,7 @@ $(document).ready(function(){
                   popupcount++;
                   }
                   n++;
-                  if (n > 3) {
+                  if (n > 2) {
                     $("#errorImages").hide();
                   }
                   $(this).find("div.imagetexttag").fadeToggle(300);
@@ -235,6 +235,13 @@ $(document).ready(function(){
                 $("#errorImages").show();  
               
             };
+
+        //check radio buttons
+        if ($('input[name="shamran"]:checked').length == 0) {
+
+            $("select[name='shamran']").focus();
+
+        }
         
         return;
         
