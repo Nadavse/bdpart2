@@ -212,29 +212,30 @@ $(document).ready(function(){
           }
       });
       // Submiting part 2
-        $("#part2SubmitButton").click(function(){
+      $("#part2SubmitButtonLoading").hide();
+      $("#part2SubmitButton2").click(function(){
+        alert("The paragraph was clicked.");
 
-            $("part2SubmitButton").hide();
-            $("part2SubmitButtonLoading").show();
-            var totalOfPoints = 0;
-            var resultsString = "";
-            //calculate result
-            for (j = 0; j < chosen.length; j++) {
-                theChosenImage = eval(imagesAndTheirNumbers[chosen[j]]);
-        
-                for (k in theChosenImage) {
-                    testSum[k] = testSum[k] + (theChosenImage[k] * multipliers[j]);
-                    totalOfPoints = totalOfPoints + (theChosenImage[k] * multipliers[j]);
-                }
-            }
-            for (l in testSum) {
-            resultsString = resultsString.concat(l, ": ", testSum[l] / totalOfPoints, "\n")
-            }
-            $('#testResult').val(resultsString, function() {
-                $( "#wf-form-seconed-part" ).submit();
-            });
+        $("#part2SubmitButton2").hide();
+        $("#part2SubmitButtonLoading").show();
 
-        });
+        var totalOfPoints = 0;
+        var resultsString = "";
+        //calculate result
+        for (j = 0; j < chosen.length; j++) {
+            theChosenImage = eval(imagesAndTheirNumbers[chosen[j]]);
+
+             for (k in theChosenImage) {
+                  testSum[k] = testSum[k] + (theChosenImage[k] * multipliers[j]);
+                  totalOfPoints = totalOfPoints + (theChosenImage[k] * multipliers[j]);
+             }
+        }
+        for (l in testSum) {
+        resultsString = resultsString.concat(l, ": ", testSum[l] / totalOfPoints, "\n")
+          }
+         $('#testResult').val(resultsString);
+         $("#wf-form-seconed-part").submit();
+      });
 
       
       //change continue buttons urls
