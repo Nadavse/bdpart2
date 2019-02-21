@@ -278,6 +278,9 @@ $(document).ready(function(){
                 $("#errorImages").text("* בחרי בין 3 ל-5 תמונות בכדי להמשיך");
                 $("#errorImages").show();  
               
+            } else {
+                $("#errorImages").text("* בחרו בין 3 ל-5 תמונות בכדי להמשיך");
+                $("#errorImages").show();   
             };
         
         return;
