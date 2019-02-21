@@ -47,9 +47,9 @@ $(document).ready(function(){
             $("#optionContinue").text("להמשך השאלון של " + seconedName + " במכשיר זה");
             $("#optionSend").text("לשליחת המשך השאלון ל" + seconedName + " במייל");
             if (seconedGender == "male") {
-                $("#successPartTwotext").text("עכשיו נבקש מ " + seconedName + " למלא את החלק שלו.");
+                $("#successPartTwotext").text("עכשיו נבקש מ" + seconedName + " למלא את החלק שלו.");
             } else if (seconedGender == "female") {
-                $("#successPartTwotext").text("עכשיו נבקש מ " + seconedName + " למלא את החלק שלה.");
+                $("#successPartTwotext").text("עכשיו נבקש מ" + seconedName + " למלא את החלק שלה.");
             };
             
           };
@@ -189,6 +189,7 @@ $(document).ready(function(){
                   chosen[n] = $(this).attr('id');
                   if (n == 0 && popupcount == 0) {
                   $(".popuptest").stop();
+                  $(".popuptest").fadeIn(300).delay(6000).fadeOut(300);
                   if (currentGender == "male") {
 
                     $(".popuptest").find("div.popuptesttext").text("מצויין! בחרת את התמונה שאתה הכי מתחבר אליה. המשך ובחר את התמונה הבאה");       
@@ -200,11 +201,12 @@ $(document).ready(function(){
                   } else {
                     $(".popuptest").find("div.popuptesttext").text("מצויין! בחרתם את התמונה שאתם הכי מתחברים אליה. המשיכו ובחרו את התמונה הבאה");
                   };
-                  $(".popuptest").fadeIn(300).delay(6000).fadeOut(300);
+                  
                   popupcount++;
                   }
                   if (n == 2 && popupcount == 1) {
                   $(".popuptest").stop();
+                  $(".popuptest").fadeIn(300).delay(6000).fadeOut(300);
                   if (currentGender == "male") {
 
                     $(".popuptest").find("div.popuptesttext").text("בחרת שלוש תמונות, אתה יכול לסיים עכשיו או לבחור תמונה אחת או שתיים נוספות");       
@@ -216,11 +218,12 @@ $(document).ready(function(){
                   } else {
                     $(".popuptest").find("div.popuptesttext").text("בחרתם שלוש תמונות, אתם יכולים לסיים עכשיו או לבחור תמונה אחת או שתיים נוספות"); 
                   };
-                  $(".popuptest").fadeIn(300).delay(6000).fadeOut(300);
+                  
                   popupcount++;
                   }
                   if (n == 4 && popupcount == 2) {
                   $(".popuptest").stop();
+                  $(".popuptest").fadeIn(300).delay(6000).fadeOut(300);
                   if (currentGender == "male") {
 
                     $(".popuptest").find("div.popuptesttext").text("בחרת חמש תמונות! אם תרצה לשנות את אחת מבחירותיך, לחץ עליה בכדי לבטל");       
@@ -232,7 +235,7 @@ $(document).ready(function(){
                   } else {
                     $(".popuptest").find("div.popuptesttext").text("בחרתם חמש תמונות! אם תרצו לשנות את אחת מבחירותיכם, לחצו עליה בכדי לבטל");   
                   };
-                  $(".popuptest").fadeIn(300).delay(6000).fadeOut(300);
+                  
                   popupcount++;
                   }
                   n++;
@@ -243,6 +246,7 @@ $(document).ready(function(){
                   $(this).find("div.imagetextnumber").text(n);
               } else {
                   $(".popuptest").stop();
+                  $(".popuptest").fadeIn(300).delay(6000).fadeOut(300);
                   if (currentGender == "male") {
 
                     $(".popuptest").find("div.popuptesttext").text("לא ניתן לבחור יותר מחמש תמונות. אם תרצה לשנות את אחת מבחירותיך, לחץ עליה בכדי לבטל");       
@@ -254,7 +258,7 @@ $(document).ready(function(){
                   } else {
                     $(".popuptest").find("div.popuptesttext").text("לא ניתן לבחור יותר מחמש תמונות. אם תרצו לשנות את אחת מבחירותיכם, לחצו עליה בכדי לבטל");
                   };
-                  $(".popuptest").fadeIn(300).delay(6000).fadeOut(300);
+                  
                   popupcount++;
               }
           }
@@ -315,7 +319,16 @@ $(document).ready(function(){
               + '&idSubmission=' + idSubmission;
 
               $("#bContinue").attr("href", nextLink);
-              $("#bSend").attr("href", "mailto:?to=&body=היי " + seconedName + " לחץ על הלינק בכדי למלא את החלק שלך בשאלון - " + nextLink + ",&subject=לינק לשאלון האישיות העיצובית של " + seconedName);
+              if (seconedGender == "male") {
+
+                $("#bSend").attr("href", "mailto:?to=&body=היי " + seconedName + " לחץ על הלינק בכדי למלא את החלק שלך בשאלון - " + nextLink + ",&subject=לינק לשאלון האישיות העיצובית של " + seconedName);       
+
+              } else if (seconedGender == "female") {
+              
+                $("#bSend").attr("href", "mailto:?to=&body=היי " + seconedName + " לחצי על הלינק בכדי למלא את החלק שלך בשאלון - " + nextLink + ",&subject=לינק לשאלון האישיות העיצובית של " + seconedName);       
+              
+              };
+              
             });	    
         });
       
