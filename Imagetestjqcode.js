@@ -1,8 +1,8 @@
 $(document).ready(function(){
 
     // Get parameters from url
-            var url_string = window.location.href;
-            var url = new URL(url_string);
+        var url_string = window.location.href;
+        var url = new URL(url_string);
         var numberOfAdults = url.searchParams.get("numberOfAdults");
         var firstName = url.searchParams.get("firstName");
         var firstGender = url.searchParams.get("firstGender");
@@ -11,13 +11,6 @@ $(document).ready(function(){
         var idSubmission = url.searchParams.get("idSubmission");
         var firstOrSeconed = url.searchParams.get("firstOrSeconed");
         
-        alert("numberOfAdults = " + numberOfAdults)
-        alert("firstName = " + firstName)
-        alert("firstGender = " + firstGender)
-        alert("seconedName = " + seconedName)
-        alert("seconedGender = " + seconedGender)
-        alert("idSubmission = " + idSubmission)
-        alert("firstOrSeconed = " + firstOrSeconed)
         
         // find the current gender and name
         var currentGender = "";
@@ -30,34 +23,53 @@ $(document).ready(function(){
             currentGender = seconedGender;
           currentName = seconedName;
           };
+
+        //add current name and id to the form
+        $("#idTestPart2").val(idSubmission);
+        $("#NamePart2").val(currentName);
+
         
         // Change texts by gender
-        if (currentGender == "male" || currentGender == "female") {
+        if (currentName !== null) {
         
           $("#title-part-2").text("האישיות העיצובית של " + currentName);
           $("#successPartTwoTitle").text(" נהדר, סיימת את החלק שלך בהצלחה!" + currentName);
-          $("#optionContinue").text("להמשך השאלון של " + seconedName + " במכשיר זה");
-          $("#optionSend").text("לשליחת המשך השאלון ל" + seconedName + " במייל");
-          if (seconedGender == "male") {
-              $("#successPartTwotext").text("עכשיו נבקש מ" + seconedName + "למלא את החלק שלו.");
-          } else if (seconedGender == "female") {
-              $("#successPartTwotext").text("עכשיו נבקש מ" + seconedName + "למלא את החלק שלה.");
-          };
-          
+
         };
+
+        if (seconedName !== null) {
+
+            $("#optionContinue").text("להמשך השאלון של " + seconedName + " במכשיר זה");
+            $("#optionSend").text("לשליחת המשך השאלון ל" + seconedName + " במייל");
+            if (seconedGender == "male") {
+                $("#successPartTwotext").text("עכשיו נבקש מ" + seconedName + "למלא את החלק שלו.");
+            } else if (seconedGender == "female") {
+                $("#successPartTwotext").text("עכשיו נבקש מ" + seconedName + "למלא את החלק שלה.");
+            };
+            
+          };
         
         if (currentGender == "male") {
         
-          $("description-part-2").text(currentName + " חלק זה של השאלון נועד עבורך. לפניך 24 תמונות ובהן קודים ויזואלים של תחושות. תחילה בחן את התמונות, ובחר אינטואיטיבית (מבלי לחשוב) את התמונה שהכי מדברת אליך. לחיצה על התמונה תסמן אותה כבחירתך הראשונה. המשך לבחור בשיטה זו את התמונות הבאות. באפשרותך לבחור משלוש עד חמש תמונות שמוצאות חן בעיניך.");
-              $("firstQ").text("בחר בסקאלה מ-1 ועד 7, עד כמה אתה רוצה להתנסות בסגנונות עיצוב חדשים או מעדיף את המוכר והידוע ( 1 - מעדיף את המוכר והידוע. 7 - רוצה להתנסות בסגנונות עיצוב חדשים)");
-          $("secondQ").text("סמן את כל סגנונות העיצוב שאתה מתחבר אליהם והיית רוצה להעניק לדירתך (אם אינך בטוח פשוט דלג על חלק זה)");
+          $("#description-part-2").text(currentName + " חלק זה של השאלון נועד עבורך. לפניך 24 תמונות ובהן קודים ויזואלים של תחושות. תחילה בחן את התמונות, ובחר אינטואיטיבית (מבלי לחשוב) את התמונה שהכי מדברת אליך. לחיצה על התמונה תסמן אותה כבחירתך הראשונה. המשך לבחור בשיטה זו את התמונות הבאות. באפשרותך לבחור משלוש עד חמש תמונות שמוצאות חן בעיניך.");
+              $("#firstQ").text("בחר בסקאלה מ-1 ועד 7, עד כמה אתה רוצה להתנסות בסגנונות עיצוב חדשים או מעדיף את המוכר והידוע ( 1 - מעדיף את המוכר והידוע. 7 - רוצה להתנסות בסגנונות עיצוב חדשים)");
+          $("#secondQ").text("סמן את כל סגנונות העיצוב שאתה מתחבר אליהם והיית רוצה להעניק לדירתך (אם אינך בטוח פשוט דלג על חלק זה)");
           
             } else if (currentGender == "female") {
         
-          $("description-part-2").text(currentName + " חלק זה של השאלון נועד עבורך. לפניך 24 תמונות ובהן קודים ויזואלים של תחושות. תחילה בחני את התמונות, ובחרי אינטואיטיבית (מבלי לחשוב) את התמונה שהכי מדברת אלייך. לחיצה על התמונה תסמן אותה כבחירתך הראשונה. המשיכי לבחור בשיטה זו את התמונות הבאות. באפשרותך לבחור משלוש עד חמש תמונות שמוצאות חן בעינייך.");
-          $("firstQ").text("בחרי בסקאלה מ-1 ועד 7, עד כמה את רוצה להתנסות בסגנונות עיצוב חדשים או מעדיפה את המוכר והידוע ( 1 - מעדיפה את המוכר והידוע. 7 - רוצה להתנסות בסגנונות עיצוב חדשים)");
-          $("secondQ").text("סמני את כל סגנונות העיצוב שאת מתחברת אליהם והיית רוצה להעניק לדירתך (אם אינך בטוחה פשוט דלגי על חלק זה)");
+          $("#description-part-2").text(currentName + " חלק זה של השאלון נועד עבורך. לפניך 24 תמונות ובהן קודים ויזואלים של תחושות. תחילה בחני את התמונות, ובחרי אינטואיטיבית (מבלי לחשוב) את התמונה שהכי מדברת אלייך. לחיצה על התמונה תסמן אותה כבחירתך הראשונה. המשיכי לבחור בשיטה זו את התמונות הבאות. באפשרותך לבחור משלוש עד חמש תמונות שמוצאות חן בעינייך.");
+          $("#firstQ").text("בחרי בסקאלה מ-1 ועד 7, עד כמה את רוצה להתנסות בסגנונות עיצוב חדשים או מעדיפה את המוכר והידוע ( 1 - מעדיפה את המוכר והידוע. 7 - רוצה להתנסות בסגנונות עיצוב חדשים)");
+          $("#secondQ").text("סמני את כל סגנונות העיצוב שאת מתחברת אליהם והיית רוצה להעניק לדירתך (אם אינך בטוחה פשוט דלגי על חלק זה)");
         
+        };
+    
+    //Changing the finish div
+        if (numberOfAdults == 2 && firstOrSeconed == 1) {
+            $("#finishedTest").hide();
+            $("#notFinishedTest").show();
+        } else {
+            $("#finishedTest").show();
+            $("#notFinishedTest").hide();
         };
           
           
@@ -198,25 +210,32 @@ $(document).ready(function(){
                   popupcount++;
               }
           }
-                calculateImages();
       });
-      
-        function calculateImages(){
+      // Submiting part 2
+        $("#part2SubmitButton").click(function(){
+
+            $("part2SubmitButton").hide();
+            $("part2SubmitButtonLoading").show();
             var totalOfPoints = 0;
-             var resultsString = "";
-          for (j = 0; j < chosen.length; j++) {
-              theChosenImage = eval(imagesAndTheirNumbers[chosen[j]]);
-    
-              for (k in theChosenImage) {
-                  testSum[k] = testSum[k] + (theChosenImage[k] * multipliers[j]);
-                  totalOfPoints = totalOfPoints + (theChosenImage[k] * multipliers[j]);
-              }
-          }
-          for (l in testSum) {
-          resultsString = resultsString.concat(l, ": ", testSum[l] / totalOfPoints, "\n")
-          }
-          $('#testResult').val(resultsString);
-      }
+            var resultsString = "";
+            //calculate result
+            for (j = 0; j < chosen.length; j++) {
+                theChosenImage = eval(imagesAndTheirNumbers[chosen[j]]);
+        
+                for (k in theChosenImage) {
+                    testSum[k] = testSum[k] + (theChosenImage[k] * multipliers[j]);
+                    totalOfPoints = totalOfPoints + (theChosenImage[k] * multipliers[j]);
+                }
+            }
+            for (l in testSum) {
+            resultsString = resultsString.concat(l, ": ", testSum[l] / totalOfPoints, "\n")
+            }
+            $('#testResult').val(resultsString, function() {
+                $( "#wf-form-seconed-part" ).submit();
+            });
+
+        });
+
       
       //change continue buttons urls
           $('#wf-form-seconed-part').submit(function() {
