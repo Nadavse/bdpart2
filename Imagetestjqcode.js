@@ -189,19 +189,49 @@ $(document).ready(function(){
                   chosen[n] = $(this).attr('id');
                   if (n == 0 && popupcount == 0) {
                   $(".popuptest").stop();
-                  $(".popuptest").find("div.popuptesttext").text("מצויין! בחרת את התמונה שאת הכי מתחברת אליה. בואי נבחר את התמונה הבאה");
+                  if (currentGender == "male") {
+
+                    $(".popuptest").find("div.popuptesttext").text("מצויין! בחרת את התמונה שאתה הכי מתחבר אליה. המשך ובחר את התמונה הבאה");       
+    
+                  } else if (currentGender == "female") {
+                  
+                    $(".popuptest").find("div.popuptesttext").text("מצויין! בחרת את התמונה שאת הכי מתחברת אליה. המשיכי ובחרי את התמונה הבאה"); 
+                  
+                  } else {
+                    $(".popuptest").find("div.popuptesttext").text("מצויין! בחרתם את התמונה שאתם הכי מתחברים אליה. המשיכו ובחרו את התמונה הבאה");
+                  };
                   $(".popuptest").fadeIn(300).delay(6000).fadeOut(300);
                   popupcount++;
                   }
                   if (n == 2 && popupcount == 1) {
                   $(".popuptest").stop();
-                  $(".popuptest").find("div.popuptesttext").text("בחרת 3 תמונות, את יכולה לסיים עכשיו או לבחור תמונה אחת או שתיים נוספות");
+                  if (currentGender == "male") {
+
+                    $(".popuptest").find("div.popuptesttext").text("בחרת שלוש תמונות, אתה יכול לסיים עכשיו או לבחור תמונה אחת או שתיים נוספות");       
+    
+                  } else if (currentGender == "female") {
+                  
+                    $(".popuptest").find("div.popuptesttext").text("בחרת שלוש תמונות, את יכולה לסיים עכשיו או לבחור תמונה אחת או שתיים נוספות");  
+                  
+                  } else {
+                    $(".popuptest").find("div.popuptesttext").text("בחרתם שלוש תמונות, אתם יכולים לסיים עכשיו או לבחור תמונה אחת או שתיים נוספות"); 
+                  };
                   $(".popuptest").fadeIn(300).delay(6000).fadeOut(300);
                   popupcount++;
                   }
                   if (n == 4 && popupcount == 2) {
                   $(".popuptest").stop();
-                  $(".popuptest").find("div.popuptesttext").text("מצויין :) בחרת חמש תמונות! אם תרצי, את יכולה לשנות את הבחירות שלך בלחיצה נוספת על התמונות שבחרת");
+                  if (currentGender == "male") {
+
+                    $(".popuptest").find("div.popuptesttext").text("בחרת חמש תמונות! אם תרצה לשנות את אחת מבחירותיך, לחץ על התמונה בכדי לבטל");       
+    
+                  } else if (currentGender == "female") {
+                  
+                    $(".popuptest").find("div.popuptesttext").text("בחרת חמש תמונות! אם תרצי לשנות את אחת מבחירותייך, לחצי על התמונה בכדי לבטל");  
+                  
+                  } else {
+                    $(".popuptest").find("div.popuptesttext").text("בחרתם חמש תמונות! אם תרצו לשנות את אחת מבחירותיכם, לחצו על התמונה בכדי לבטל");   
+                  };
                   $(".popuptest").fadeIn(300).delay(6000).fadeOut(300);
                   popupcount++;
                   }
@@ -213,7 +243,17 @@ $(document).ready(function(){
                   $(this).find("div.imagetextnumber").text(n);
               } else {
                   $(".popuptest").stop();
-                  $(".popuptest").find("div.popuptesttext").text("אי אפשר לבחור יותר מחמש תמונות. אם תרצי, את יכולה לבטל את התמונות שכבר בחרת בלחיצה");
+                  if (currentGender == "male") {
+
+                    $(".popuptest").find("div.popuptesttext").text("לא ניתן לבחור יותר מחמש תמונות. אם תרצה לשנות את אחת מבחירותיך, לחץ על התמונה בכדי לבטל");       
+    
+                  } else if (currentGender == "female") {
+                  
+                    $(".popuptest").find("div.popuptesttext").text("לא ניתן לבחור יותר מחמש תמונות. אם תרצי לשנות את אחת מבחירותייך, לחצי על התמונה בכדי לבטל");
+                  
+                  } else {
+                    $(".popuptest").find("div.popuptesttext").text("לא ניתן לבחור יותר מחמש תמונות. אם תרצו לשנות את אחת מבחירותיכם, לחצו על התמונה בכדי לבטל");
+                  };
                   $(".popuptest").fadeIn(300).delay(6000).fadeOut(300);
                   popupcount++;
               }
@@ -239,14 +279,6 @@ $(document).ready(function(){
         return;
         
         };
-
-        //check radio buttons
-        if ($('input[name="shamran"]:checked').length == 0) {
-
-            $("select[name='shamran']").focus();
-            return;
-
-        }
 
         $("#part2SubmitButton2").hide();
         $("#part2SubmitButtonLoading").show();
