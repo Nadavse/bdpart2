@@ -305,6 +305,7 @@ $(document).ready(function(){
         resultsString = resultsString.concat(l, ": ", testSum[l] / totalOfPoints, "\n")
           }
          $('#testResult').val(resultsString);
+         $('imagesChosen-list-2').val(chosen);
          $("#wf-form-seconed-part").submit();
       });
 
