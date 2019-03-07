@@ -105,29 +105,29 @@ $(document).ready(function(){
             this.spirituality = spirituality;
         };
     
-        var lookingAtSea = new TestImage(90, 0, 0, 0, 0, 10, 0, 0, 0, 0, 0, 0, 0);
-        var runningStoneGirl = new TestImage(0, 0, 0, 5, 5, 0, 55, 35, 0, 0, 0, 0, 0);
-        var elegantSofa = new TestImage(0, 20, 0, 0, 40, 0, 0, 0, 40, 0, 0, 0, 0);
-        var rockAtSea = new TestImage(0, 0, 0, 0, 0, 0, 0, 45, 0, 55, 0, 0, 0);
-        var lion = new TestImage(10, 0, 0, 0, 40, 0, 0, 0, 0, 50, 0, 0, 0);
-        var lightInTheWoods = new TestImage(0, 0, 0, 60, 0, 0, 10, 5, 0, 0, 25, 0, 0);
-        var stonesInBalance = new TestImage(40, 0, 10, 0, 0, 0, 10, 0, 0, 0, 0, 40, 0);
-        var colorStreet = new TestImage(0, 15, 0, 10, 0, 0, 15, 10, 0, 0, 50, 0, 0);
-        var balanceWaveInTheBeach = new TestImage(0, 0, 45, 0, 0, 0, 0, 0, 0, 0, 0, 55, 0);
-        var houseWithArch = new TestImage(0, 45, 0, 15, 40, 0, 0, 0, 0, 0, 0, 0, 0);
-        var roadInTheForest = new TestImage(0, 0, 0, 35, 0, 0, 0, 65, 0, 0, 0, 0, 0);
-        var montserrat = new TestImage(0, 20, 0, 20, 0, 0, 0, 0, 0, 60, 0, 0, 0);
-        var fieldWithSky = new TestImage(0, 30, 0, 0, 30, 40, 0, 0, 0, 0, 0, 0, 0);
-        var pottery = new TestImage(0, 0, 80, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0);
-        var seaLandscape = new TestImage(0, 0, 0, 0, 0, 65, 0, 25, 0, 10, 0, 0, 0);
+        var lookingAtSea = new TestImage(90, 5, 0, 0, 0, 5, 0, 10, 0, 0, 0, 0, 0);
+        var runningStoneGirl = new TestImage(0, 0, 0, 5, 5, 0, 65, 30, 0, 0, 0, 0, 0);
+        var elegantSofa = new TestImage(0, 50, 0, 0, 40, 0, 10, 0, 60, 0, 0, 0, 0);
+        var rockAtSea = new TestImage(0, 0, 0, 0, 25, 0, 0, 50, 0, 70, 0, 0, 0);
+        var lion = new TestImage(10, 0, 0, 0, 50, 0, 0, 0, 0, 50, 0, 0, 0);
+        var lightInTheWoods = new TestImage(0, 0, 0, 80, 0, 0, 10, 10, 0, 0, 20, 0, 0);
+        var stonesInBalance = new TestImage(50, 0, 10, 0, 0, 0, 15, 0, 0, 0, 0, 50, 0);
+        var colorStreet = new TestImage(0, 25, 0, 10, 0, 0, 15, 10, 0, 0, 65, 0, 0);
+        var balanceWaveInTheBeach = new TestImage(0, 0, 50, 0, 0, 0, 0, 10, 0, 0, 0, 55, 0);
+        var houseWithArch = new TestImage(0, 80, 15, 15, 35, 0, 0, 0, 0, 0, 0, 0, 0);
+        var roadInTheForest = new TestImage(0, 0, 0, 40, 0, 0, 0, 100, 0, 0, 0, 0, 0);
+        var montserrat = new TestImage(0, 30, 0, 10, 0, 0, 0, 0, 0, 90, 0, 0, 0);
+        var fieldWithSky = new TestImage(0, 20, 0, 10, 30, 50, 0, 0, 0, 0, 0, 0, 0);
+        var pottery = new TestImage(0, 0, 100, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0);
+        var seaLandscape = new TestImage(0, 0, 0, 0, 0, 90, 0, 30, 0, 10, 0, 0, 0);
         var tree = new TestImage(0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0, 0);
         var couchWithGlasses = new TestImage(0, 0, 0, 0, 100, 0, 0, 0, 0, 0, 0, 0, 0);
         var flowers = new TestImage(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 80, 0, 0);
-        var bridge = new TestImage(0, 0, 0, 10, 0, 0, 70, 20, 0, 0, 0, 0, 0);
-        var waterfalls = new TestImage(0, 0, 0, 10, 0, 0, 15, 75, 0, 0, 0, 0, 0);
-        var manOnCouchReading = new TestImage(0, 70, 0, 0, 30, 0, 0, 0, 0, 0, 0, 0, 0);
-        var bear = new TestImage(0, 20, 0, 0, 55, 0, 0, 0, 0, 25, 0, 0, 0);
-        var palace = new TestImage(0, 10, 0, 20, 0, 0, 10, 0, 60, 0, 0, 0, 0);
+        var bridge = new TestImage(0, 0, 0, 10, 0, 0, 90, 0, 0, 20, 0, 0, 0);
+        var waterfalls = new TestImage(0, 0, 0, 10, 0, 0, 15, 100, 0, 0, 0, 0, 0);
+        var manOnCouchReading = new TestImage(0, 80, 0, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0);
+        var bear = new TestImage(0, 35, 0, 0, 70, 0, 0, 0, 0, 40, 0, 0, 0);
+        var palace = new TestImage(0, 10, 0, 0, 0, 0, 15, 0, 70, 25, 0, 0, 0);
         var cave = new TestImage(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 100);
     
         var testSum = new TestImage(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
@@ -263,6 +263,13 @@ $(document).ready(function(){
               }
           }
       });
+
+        //Hide error messages - Shamran
+        $('input[name="shamran"]').change(function (){
+            $('#shamran-error').hide();
+        });  
+
+
       // Submiting part 2
       $("#part2SubmitButton2").click(function(){
 
@@ -286,6 +293,13 @@ $(document).ready(function(){
         return;
         
         };
+
+      //Validation for shamran
+      if ($('input[name="shamran"]:checked').length == 0) {
+        $('input[name="shamran"]').focus();
+        $('#shamran-error').show();
+        return;
+      };
 
         $("#part2SubmitButton2").hide();
         $("#part2SubmitButtonLoading").show();
