@@ -327,7 +327,7 @@ $(document).ready(function(){
       //change continue buttons urls
           $('#wf-form-seconed-part').submit(function() {
             $(document).ajaxSuccess(function(){
-              var nextLink = 'https://home-being.webflow.io/part2'
+              var nextLink = 'https://www.myhomebeing.com/part2'
               + '?numberOfAdults=' + numberOfAdults
               + '&firstName=' + firstName
               + '&firstOrSeconed=2'
@@ -340,7 +340,7 @@ $(document).ready(function(){
               if (seconedGender == "male") {
 
                 $("#bSend").attr("href", "mailto:?to=&body=היי " + seconedName + " לחץ על הלינק בכדי למלא את החלק שלך בשאלון - " +
-                'https://home-being.webflow.io/part2'
+                'https://www.myhomebeing.com/part2'
                 + '%3F' + 'numberOfAdults=' + numberOfAdults
                 + '%26' + 'firstName=' + firstName
                 + '%26' + 'firstOrSeconed=2'
@@ -353,7 +353,7 @@ $(document).ready(function(){
               } else if (seconedGender == "female") {
               
                 $("#bSend").attr("href", "mailto:?to=&body=היי " + seconedName + " לחצי על הלינק בכדי למלא את החלק שלך בשאלון - " +
-                'https://home-being.webflow.io/part2'
+                '%0D%0A' + 'https://www.myhomebeing.com/part2'
                 + '%3F' + 'numberOfAdults=' + numberOfAdults
                 + '%26' + 'firstName=' + firstName
                 + '%26' + 'firstOrSeconed=2'
@@ -361,7 +361,7 @@ $(document).ready(function(){
                 + '%26' + 'seconedName=' + seconedName
                 + '%26' + 'seconedGender=' + seconedGender
                 + '%26' + 'idSubmission=' + idSubmission +
-                ",&subject=לינק לשאלון האישיות העיצובית של " + seconedName);       
+                "&subject=לינק לשאלון האישיות העיצובית של " + seconedName);       
               
               };
               
