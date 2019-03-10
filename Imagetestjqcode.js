@@ -316,12 +316,13 @@ $(document).ready(function(){
                   testSum[k] = testSum[k] + (theChosenImage[k] * multipliers[j]);
                   totalOfPoints = totalOfPoints + (theChosenImage[k] * multipliers[j]);
              }
+
+             $('#imageChosen' + j + 1).val(chosen[j]);
         }
         for (l in testSum) {
         resultsString = resultsString.concat(l, ": ", testSum[l] / totalOfPoints, "\n")
           }
          $('#testResult').val(resultsString);
-         $('#imagesChosen-list-2').val(chosen);
          $("#wf-form-seconed-part").submit();
       });
 
