@@ -29,9 +29,10 @@ $(document).ready(function(){
         $("#errorImages").hide();
 
 
-        //add current name and id to the form
+        //add current name and id and firstOrSeconed to the form
         $("#idTestPart2").val(idSubmission);
         $("#NamePart2").val(currentName);
+        $("#firstOrSeconedfiled-2").val(firstOrSeconed);
 
         
         // Change texts by gender
