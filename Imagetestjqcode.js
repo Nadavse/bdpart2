@@ -316,13 +316,20 @@ $(document).ready(function(){
                   testSum[k] = testSum[k] + (theChosenImage[k] * multipliers[j]);
                   totalOfPoints = totalOfPoints + (theChosenImage[k] * multipliers[j]);
              }
-
-             $('#imageChosen' + j + 1).val(chosen[j]);
         }
         for (l in testSum) {
         resultsString = resultsString.concat(l, ": ", testSum[l] / totalOfPoints, "\n")
           }
          $('#testResult').val(resultsString);
+         $('#imageChosen1').val(chosen[0]);
+         $('#imageChosen2').val(chosen[1]);
+         $('#imageChosen3').val(chosen[2]);
+         if ( chosen.length >= 4) {
+            $('#imageChosen4').val(chosen[3]);
+         }
+         if ( chosen.length == 5) {
+            $('#imageChosen5').val(chosen[4]);
+         }
          $("#wf-form-seconed-part").submit();
       });
 
