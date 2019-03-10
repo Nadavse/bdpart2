@@ -25,7 +25,7 @@ $('#errorUpload').hide();
 $('#wf-form-First-part').submit(function() {
           $(document).ajaxSuccess(function(){
                  location.href = '/part2'
-      + '?numberOfAdults=' + $('input[name=Number-of-adults]:checked', '#wf-form-First-part').val()
+      + '?numberOfAdults=' + $('input[name=numberOfAdults]:checked', '#wf-form-First-part').val()
       + '&firstName=' + $('#1st-name').val()
       + '&firstOrSeconed=1'
       + '&firstGender=' + $('#1st-gender').val()
@@ -40,7 +40,7 @@ $(document).ajaxSend(function(){
 $('#loadingPart2Text').html('במידה ואינכם מועברים באופן אוטומטי לאחר כמה שניות '
             + '<a href="'
             + '/part2'
-      + '?numberOfAdults=' + $('input[name=Number-of-adults]:checked', '#wf-form-First-part').val()
+      + '?numberOfAdults=' + $('input[name=numberOfAdults]:checked', '#wf-form-First-part').val()
       + '&firstName=' + $('#1st-name').val()
       + '&firstOrSeconed=1'
       + '&firstGender=' + $('#1st-gender').val()
