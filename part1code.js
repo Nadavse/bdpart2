@@ -21,6 +21,13 @@ if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Interne
 
 $('#errorUpload').hide();
 
+// Get payment code from url and enter it to the field
+var url_string = window.location.href;
+var url = new URL(url_string);
+var paymentCode = url.searchParams.get("pcode");
+$("#pcode").val(paymentCode);
+
+
 //redirect + parameters
 $('#wf-form-First-part').submit(function() {
           $(document).ajaxSuccess(function(){
