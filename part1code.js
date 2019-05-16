@@ -364,13 +364,13 @@ if( !$('#kivun-Salon').val() ) {
   return;
         };
 // Upload requierd message
-if( !$("#File-2").val() ) {
-    $('#errorUpload').show();
-  $('#File-2').focus();
-  $("#part1SubmitButtonLoading").hide();
-  $("#SubmitButton1").show();
-  return;
-        };
+//if( !$("#File-2").val() ) {
+//    $('#errorUpload').show();
+//  $('#File-2').focus();
+//  $("#part1SubmitButtonLoading").hide();
+//  $("#SubmitButton1").show();
+//  return;
+//        };
 //phone
 if( !$('#phone').val() ) {
     $('#phone-error').show();
